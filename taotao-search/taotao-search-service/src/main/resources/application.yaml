@@ -1,0 +1,33 @@
+mybatis:
+  config-location: classpath:mybatis/SqlMapConfig.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+  datasource:
+    username: root
+    password: 123123
+    url: jdbc:mysql://localhost:3306/taotao
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  data:
+    solr:
+      host: http://localhost:8983/solr/collection1
+  activemq:
+    user: admin
+    password: admin
+    broker-url: tcp://localhost:61616
+    pool:
+      enabled: true
+      max-connections: 50
+    packages:
+      trust-all: false
+
+dubbo:
+  application:
+    name: e3-search
+  registry:
+    address: zookeeper://localhost:2181
+  scan:
+    basePackages: com.taotao.search.service
+  protocol:
+    port: 20882
